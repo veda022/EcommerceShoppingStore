@@ -12,6 +12,6 @@ namespace EcommerceShoppingStore.Models
         public DateTime? ShipDate { get; set; }
         public int? CustomerId { get; set; }
 
-        //public virtual Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

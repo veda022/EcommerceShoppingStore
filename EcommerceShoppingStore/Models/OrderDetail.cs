@@ -12,6 +12,6 @@ namespace EcommerceShoppingStore.Models
         public long? UnitCost { get; set; }
         public int? ProductsId { get; set; }
 
-        public virtual Product Products { get; set; }
+        //public virtual Product Products { get; set; }
     }
 }
