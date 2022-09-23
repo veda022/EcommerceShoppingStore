@@ -26,23 +26,24 @@ namespace EcommerceShoppingStore.Repository
             return null;
         }
 
-        public async Task<IEnumerable<OrderViewModel>> GetOrders()
+        public async Task<IEnumerable<Order>> GetOrders()
         {
             if (db != null)
             {
-                return await (from o in db.Orders
-                              from c in db.Customers
-                              where o.CustomerId == c.CustomerId
-                              select new OrderViewModel
-                              {
-                                  OrderId = o.OrderId,
-                                  OrderDate = o.OrderDate,
-                                  ShipDate = o.ShipDate,
-                                  CustomerId = o.CustomerId,
-                                  FullName = c.FullName,
-                                  Email = c.Email,
-                                  DeliveryAddress = c.DeliveryAddress
-                              }).ToListAsync();
+                return await db.Orders.ToListAsync();
+                //return await (from o in db.Orders
+                //              from c in db.Customers
+                //              where o.OrderId <= int.MaxValue
+                //              select new OrderViewModel
+                //              {
+                //                  OrderId = o.OrderId,
+                //                  OrderDate = o.OrderDate,
+                //                  ShipDate = o.ShipDate,
+                //                  CustomerId = o.CustomerId,
+                //                  FullName = c.FullName,
+                //                  Email = c.Email,
+                //                  DeliveryAddress = c.DeliveryAddress
+                //              }).ToListAsync();
             }
 
             return null;

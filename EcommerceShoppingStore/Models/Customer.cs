@@ -7,10 +7,10 @@ namespace EcommerceShoppingStore.Models
 {
     public partial class Customer
     {
-        public Customer()
-        {
-            Orders = new HashSet<Order>();
-        }
+        //public Customer()
+        //{
+        //    Orders = new HashSet<Order>();
+        //}
 
         public int CustomerId { get; set; }
         public string FullName { get; set; }
@@ -18,6 +18,6 @@ namespace EcommerceShoppingStore.Models
         public string Password { get; set; }
         public string DeliveryAddress { get; set; }
 
-        public virtual ICollection<Order> Orders { get; set; }
+        //public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace EcommerceShoppingStore.Interface
     {
         Task<IEnumerable<Customer>> GetCustomers();
 
-        Task<IEnumerable<OrderViewModel>> GetOrders();
+        Task<IEnumerable<Order>> GetOrders();
 
         Task<OrderViewModel> GetOrder(int? OrderId);
 

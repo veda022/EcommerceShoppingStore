@@ -26,24 +26,23 @@ namespace EcommerceShoppingStore.Repository
             return null;
         }
 
-        public async Task<IEnumerable<ProductViewModel>> GetProducts()
+        public async Task<IEnumerable<Product>> GetProducts()
         {
             if (db != null)
             {
-                return await (from p in db.Products
-                              from c in db.Categories
-                              where p.ProductsId == c.CategoryId
-                              select new ProductViewModel
-                              {
-                                  ProductsId = p.ProductsId,
-                                  ModelName = p.ModelName,
-                                  ModelNumber = p.ModelNumber,
-                                  UnitCost = p.UnitCost,
-                                  Product_Description = p.Product_Description,
-                                  CategoryId = p.CategoryId,
-                                  CategoryName = c.CategoryName,
-                                  Category_Description = c.Category_Description
-                              }).ToListAsync();
+                return await db.Products.ToListAsync();
+                //return await (from p in db.Products
+                //              from c in db.Categories
+                //              where p.ProductsId <= c.CategoryId 
+                //              select new ProductViewModel
+                //              {
+                //                  ProductsId = p.ProductsId,
+                //                  ModelName = p.ModelName,
+                //                  ModelNumber = p.ModelNumber,
+                //                  UnitCost = p.UnitCost,
+                //                  Product_Description = p.Product_Description,
+                //                  CategoryId = p.CategoryId,
+                //              }).ToListAsync();
             }
 
             return null;

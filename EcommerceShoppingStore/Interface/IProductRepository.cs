@@ -10,7 +10,7 @@ namespace EcommerceShoppingStore.Interface
     {
         Task<IEnumerable<Category>> GetCategories();
 
-        Task<IEnumerable<ProductViewModel>> GetProducts();
+        Task<IEnumerable<Product>> GetProducts();
 
         Task<ProductViewModel> GetProduct(int? ProductId);
 
